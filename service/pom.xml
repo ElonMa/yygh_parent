@@ -3,14 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>yygh_parent</artifactId>
-        <groupId>com.may</groupId>
+        <artifactId>yygh-parent</artifactId>
+        <groupId>com.may.yygh</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>service_user</module>
+        <module>service-user</module>
+        <module>service-cmn</module>
+        <module>service-hosp</module>
+        <module>service-order</module>
+        <module>service-oss</module>
+        <module>service-statistics</module>
+        <module>service-task</module>
     </modules>
     <artifactId>service</artifactId>
     <dependencies>
@@ -44,12 +50,22 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <!-- jar 冲突 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+
         </dependency>
         <!-- 流量控制 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+
+
     </dependencies>
     <build>
         <plugins>
