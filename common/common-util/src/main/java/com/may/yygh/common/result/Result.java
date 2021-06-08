@@ -2,7 +2,9 @@ package com.may.yygh.common.result;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 
 /**
  * 全局统一返回结果类
@@ -19,6 +21,9 @@ public class Result<T> {
 
     @ApiModelProperty(value = "返回数据")
     private T data;
+
+//    @Getter(AccessLevel.NONE)
+//    private boolean ok;
 
     public Result(){}
 
@@ -83,10 +88,10 @@ public class Result<T> {
         return this;
     }
 
-    public boolean isOk() {
-        if(this.getCode().intValue() == ResultCodeEnum.SUCCESS.getCode().intValue()) {
-            return true;
-        }
-        return false;
-    }
+//    public boolean isOk() {
+//        if(this.getCode().intValue() == ResultCodeEnum.SUCCESS.getCode().intValue()) {
+//            return true;
+//        }
+//        return false;
+//    }
 }
