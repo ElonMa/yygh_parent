@@ -1,4 +1,4 @@
-package com.may.yygh.hosp.mapper;
+package com.may.yygh.user.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.may.yygh.model.user.UserInfo;

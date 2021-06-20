@@ -1,8 +1,8 @@
-package com.may.yygh.hosp.controller;
+package com.may.yygh.user.controller;
 
 import com.may.yygh.common.result.Result;
 import com.may.yygh.common.utils.IpUtil;
-import com.may.yygh.hosp.service.UserInfoService;
+import com.may.yygh.user.service.UserInfoService;
 import com.may.yygh.vo.user.LoginVo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.may.yygh.hosp.service.impl;
+package com.may.yygh.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -6,8 +6,8 @@ import com.may.yygh.common.exception.YyghException;
 import com.may.yygh.common.helper.JwtHelper;
 import com.may.yygh.common.result.ResultCodeEnum;
 import com.may.yygh.model.user.UserInfo;
-import com.may.yygh.hosp.mapper.UserInfoMapper;
-import com.may.yygh.hosp.service.UserInfoService;
+import com.may.yygh.user.mapper.UserInfoMapper;
+import com.may.yygh.user.service.UserInfoService;
 import com.may.yygh.vo.user.LoginVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

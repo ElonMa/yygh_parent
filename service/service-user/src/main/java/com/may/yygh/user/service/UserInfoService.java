@@ -1,4 +1,4 @@
-package com.may.yygh.hosp.service;
+package com.may.yygh.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.may.yygh.model.user.UserInfo;
