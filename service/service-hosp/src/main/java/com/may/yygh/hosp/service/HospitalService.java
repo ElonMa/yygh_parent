@@ -1,6 +1,5 @@
 package com.may.yygh.hosp.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.may.yygh.model.hosp.Hospital;
 import com.may.yygh.vo.hosp.HospitalQueryVo;
 import org.springframework.data.domain.Page;

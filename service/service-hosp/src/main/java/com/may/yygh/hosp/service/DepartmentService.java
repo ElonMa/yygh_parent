@@ -26,4 +26,9 @@ public interface DepartmentService {
 
     //根据科室编号，和医院编号，查询科室
     Department getDepartment(String hoscode, String depcode);
+    /**
+     * 医院预约挂号详情
+     */
+    Map<String, Object> item(String hoscode);
+
 }
