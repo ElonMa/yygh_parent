@@ -9,6 +9,8 @@ import com.may.yygh.model.user.UserInfo;
 import com.may.yygh.hosp.mapper.UserInfoMapper;
 import com.may.yygh.hosp.service.UserInfoService;
 import com.may.yygh.vo.user.LoginVo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -17,6 +19,9 @@ import java.util.Map;
 
 @Service
 public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> implements UserInfoService {
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
+
     @Override
     public Map<String, Object> login(LoginVo loginVo) {
         String phone = loginVo.getPhone();
@@ -27,7 +32,11 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
             throw new YyghException(ResultCodeEnum.PARAM_ERROR);
         }
 
-        //TODO 校验校验验证码
+        //校验校验验证码
+        String mobleCode = redisTemplate.opsForValue().get(phone);
+        if(!code.equals(mobleCode)) {
+            throw new YyghException(ResultCodeEnum.CODE_ERROR);
+        }
 
         //手机号已被使用
         QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
