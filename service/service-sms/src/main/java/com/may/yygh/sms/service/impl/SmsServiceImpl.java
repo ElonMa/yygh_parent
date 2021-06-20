@@ -10,11 +10,13 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.may.yygh.sms.service.SmsService;
 import com.may.yygh.sms.utils.ConstantPropertiesUtils;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class SmsServiceImpl implements SmsService {
 
     @Override
